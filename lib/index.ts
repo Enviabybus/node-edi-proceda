@@ -6,32 +6,15 @@ import {
   EdiParserMandatoryValueError,
   EdiParserPatternError,
 } from './errors';
+import { EdiParamSchema, EdiSchema } from './types';
 
-// #region typings
-export interface EdiSchema {
-  name: string;
-  identifier: string;
-  mandatory?: boolean;
-  multiple?: boolean;
-  params: EdiParamSchema[];
-  complement?: EdiSchema;
-  includes?: EdiSchema[];
-}
-
-export interface EdiParamSchema {
-  seq?: number,
-  name: string;
-  start: number;
-  end: number;
-  mandatory?: boolean;
-  pattern?: RegExp;
-  format?: (v: string) => string | number | boolean;
-}
-// #endregion
-
-export const EDI = {
+const EDI = {
   parse: (schemas: EdiSchema[], fileContent: string, validate = true): JSONSchema4Object => {
     return parseFile(schemas, fileContent, validate);
+  },
+
+  notfis: {
+
   },
 };
 
@@ -105,3 +88,5 @@ function parseParams(
     return obj;
   }, {} as JSONSchema4Object);
 }
+
+export default EDI;
