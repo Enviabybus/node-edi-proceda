@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../types';
+import { EdiSchema } from '../../../types';
 import dadosComplementaresSchema from './308-dados-complementares.schema';
 import dadosDeNotaFiscal from './313-dados-de-nota-fiscal.schema';
 

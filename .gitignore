@@ -1,28 +1,19 @@
 # OS X
 .DS_Store*
-Icon?
-._*
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# IDE
+.idea
+.vscode
 
-# Linux
-.bash_history
-.config
-.directory
-*~
+# npm
+node_modules
+yarn.lock
+package-lock.json
 
 # Node
 .node_repl_history
-node_modules
-package-lock.json
-*.log
-*.gz
 
-# Coveralls
-coverage
-
-# Benchmarking
-benchmarks/graphs
+# build
+/edi
+/schemas
+/index.*

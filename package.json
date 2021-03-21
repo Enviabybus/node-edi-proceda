@@ -1,9 +1,9 @@
 {
   "name": "@enviabybus/edi-proceda",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Interpretador de arquivos de EDI Proceda",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Enviabybus/node-edi-proceda.git"

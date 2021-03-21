@@ -5,7 +5,7 @@ import {
   EdiParserMandatoryFieldError,
   EdiParserMandatoryValueError,
   EdiParserPatternError,
-} from './errors';
+} from './edi/errors';
 import { EdiParamSchema, EdiSchema } from './types';
 
 const EDI = {

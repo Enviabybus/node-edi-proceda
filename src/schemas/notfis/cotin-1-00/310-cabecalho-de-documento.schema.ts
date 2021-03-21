@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../types';
+import { EdiSchema } from '../../../types';
 
 export const cabecalhoDeDocumentoSchema: EdiSchema = {
   name: 'cabecalhoDeDocumento',

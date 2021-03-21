@@ -1,5 +1,5 @@
-import { EdiDecimal } from '../../formatters';
-import { EdiSchema } from '../../types';
+import { EdiDecimal } from '../../../edi/formatters';
+import { EdiSchema } from '../../../types';
 
 export const mercadoriaDaNotaFiscal: EdiSchema = {
   name: 'mercadoriaDaNotaFiscal',
