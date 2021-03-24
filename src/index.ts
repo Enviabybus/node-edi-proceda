@@ -64,6 +64,7 @@ function parseFile(schemas: EdiSchema[], Edi: string, validate: boolean, startLi
       }
 
       list.push({
+        linha: lineNumber,
         ...parseParams(schema, schema.params, line, lineNumber, validate),
         ...complement,
         ...includes,
