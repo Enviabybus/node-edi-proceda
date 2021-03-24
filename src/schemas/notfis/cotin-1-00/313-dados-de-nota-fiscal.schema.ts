@@ -1,5 +1,5 @@
 import { EdiDecimal } from '../../../edi/formatters';
-import { EdiSchema } from '../../../types';
+import { EdiSchema } from '../../../';
 import dadosComplementaresNf from './307-dados-complementares-nf.schema';
 import volumesDaNotaFiscal from './319-volumes-da-nota-fiscal.schema';
 

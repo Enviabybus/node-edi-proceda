@@ -1,5 +1,5 @@
 import { EdiDecimal } from '../../../edi/formatters';
-import { EdiSchema } from '../../../types';
+import { EdiSchema } from '../../../';
 
 export const valoresTotaisDocumento: EdiSchema = {
   name: 'valoresTotaisDocumento',

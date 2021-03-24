@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../../types';
+import { EdiSchema } from '../../../';
 import dadosComplementaresSchema from './308-dados-complementares.schema';
 import dadosDoDestinatarioSchema from './312-dados-do-destinatario.schema';
 import dadosDoConsignatario from './315-dados-do-consignatario.schema';
