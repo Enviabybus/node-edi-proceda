@@ -165,7 +165,6 @@ export const dadosDeNotaFiscal: EdiSchema = {
     name: 'chaveNfe',
     start: 259,
     end: 302,
-    format: Number,
   }],
   complement: dadosComplementaresNf,
   includes: [
