@@ -1,0 +1,7 @@
+{
+  "project_id": "edi-proceda",
+  "phabricator.uri": "http://phabricator.enviabybus.com.br",
+  "conduit_uri": "http://phabricator.enviabybus.com.br",
+  "base": "git:merge-base(origin/master)",
+  "arc.land.onto.default": "master"
+}
