@@ -1,5 +1,5 @@
 import { EdiSchema } from '../../..';
-import dadosDeNotaFiscalSchema from './313-dados-de-nota-fiscal.schema';
+import { dadosDaEmbarcadoraSchema } from './311-dados-da-embarcadora.schema';
 
 export const dadosDoResponsavelSchema: EdiSchema = {
   name: 'dadosDoResponsavel',
@@ -62,7 +62,7 @@ export const dadosDoResponsavelSchema: EdiSchema = {
     start: 230,
     end: 240,
   }],
-  complement: dadosDeNotaFiscalSchema,
+  complement: dadosDaEmbarcadoraSchema,
 };
 
 export default dadosDoResponsavelSchema;

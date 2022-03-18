@@ -1,6 +1,5 @@
-import { EdiDecimal } from '../../../edi/formatters';
 import { EdiSchema } from '../../..';
-import dadosDeNotaFiscalSchema from './313-dados-de-nota-fiscal.schema';
+import dadosDaEmbarcadoraSchema from './311-dados-da-embarcadora.schema';
 
 export const dadosParaRedespachoSchema: EdiSchema = {
   name: 'dadosParaRedespacho',
@@ -65,7 +64,7 @@ export const dadosParaRedespachoSchema: EdiSchema = {
     start: 234,
     end: 340,
   }],
-  complement: dadosDeNotaFiscalSchema,
+  complement: dadosDaEmbarcadoraSchema,
 };
 
 export default dadosParaRedespachoSchema;

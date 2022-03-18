@@ -41,7 +41,6 @@ export const cabecalhoDeIntercambioSchema: EdiSchema = {
     start: 96,
     end: 240,
   }],
-  includes: [ cabecalhoDeDocumentoSchema ]
 };
 
 export default cabecalhoDeIntercambioSchema;

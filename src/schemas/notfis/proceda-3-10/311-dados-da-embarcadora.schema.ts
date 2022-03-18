@@ -1,6 +1,8 @@
 import { EdiSchema } from '../../..';
-import cabecalhoDeDocumentoSchema from './310-cabecalho-de-documento.schema';
+import dadosDoConsignatarioSchema from './315-dados-do-consignatario.schema';
 import dadosDoDestinatarioSchema from './312-dados-do-destinatario.schema';
+import dadosDoResponsavelSchema from './317-dados-do-responsavel.schema';
+import dadosParaRedespachoSchema from './316-dados-para-redespacho.schema';
 
 export const dadosDaEmbarcadoraSchema: EdiSchema = {
   name: 'dadosDaEmbarcadora',
@@ -47,15 +49,16 @@ export const dadosDaEmbarcadoraSchema: EdiSchema = {
     name: 'razaoSocial',
     start: 134,
     end: 173,
-    mandatory: true,
   }, {
     name: 'filler',
     start: 174,
     end: 240,
   }],
-  complement: cabecalhoDeDocumentoSchema,
   includes: [
+    dadosDoConsignatarioSchema,
     dadosDoDestinatarioSchema,
+    dadosDoResponsavelSchema,
+    dadosParaRedespachoSchema,
   ],
 };
 

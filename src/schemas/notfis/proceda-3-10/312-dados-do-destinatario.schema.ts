@@ -70,9 +70,7 @@ export const dadosDoDestinatarioSchema: EdiSchema = {
     end: 240,
   }],
   complement: dadosDaEmbarcadoraSchema,
-  includes: [
-    dadosDeNotaFiscal,
-  ],
+  includes: [dadosDeNotaFiscal],
 };
 
 export enum IdentificacaoDestinatario {

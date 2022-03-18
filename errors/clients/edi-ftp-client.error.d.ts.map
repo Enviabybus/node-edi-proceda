@@ -1,0 +1,1 @@
+{"version":3,"file":"edi-ftp-client.error.d.ts","sourceRoot":"","sources":["../../src/errors/clients/edi-ftp-client.error.ts"],"names":[],"mappings":"AAAA,qBAAa,iBAAkB,SAAQ,KAAK;CAAG;AAE/C,qBAAa,6BAA8B,SAAQ,iBAAiB;gBACtD,QAAQ,EAAE,MAAM;CAG7B"}

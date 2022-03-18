@@ -2,10 +2,6 @@ import { EdiDecimal } from '../../../edi/formatters';
 import { EdiSchema } from '../../..';
 import dadosDoDestinatarioSchema from './312-dados-do-destinatario.schema';
 import dadosComplementaresNfSchema from './333-dados-complementares-nf.schema';
-import dadosDoResponsavelSchema from './317-dados-do-responsavel.schema';
-import dadosParaRedespachoSchema from './316-dados-para-redespacho.schema';
-import dadosDoConsignatarioSchema from './315-dados-do-consignatario.schema';
-import mercadoriaDaNotaFiscalSchema from './314-mercadoria-da-nota-fiscal.schema';
 
 export const dadosDeNotaFiscalSchema: EdiSchema = {
   name: 'dadosDeNotaFiscal',
@@ -169,13 +165,7 @@ export const dadosDeNotaFiscalSchema: EdiSchema = {
     end: 240,
   }],
   complement: dadosDoDestinatarioSchema,
-  includes: [
-    dadosComplementaresNfSchema,
-    dadosDoConsignatarioSchema,
-    dadosDoResponsavelSchema,
-    dadosParaRedespachoSchema,
-    mercadoriaDaNotaFiscalSchema,
-  ],
+  includes: [dadosComplementaresNfSchema],
 };
 
 export enum MeioDeTransporte {

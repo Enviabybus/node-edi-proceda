@@ -48,7 +48,6 @@ export const valoresTotaisDocumentoSchema: EdiSchema = {
     start: 94,
     end: 240,
   }],
-  complement: cabecalhoDeIntercambioSchema,
 };
 
 export default valoresTotaisDocumentoSchema;
