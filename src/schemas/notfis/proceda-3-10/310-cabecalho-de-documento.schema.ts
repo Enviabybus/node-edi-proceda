@@ -13,12 +13,10 @@ export const cabecalhoDeDocumentoSchema: EdiSchema = {
     start: 1,
     end: 3,
     format: Number,
-    mandatory: true,
   }, {
     name: 'identificacaoDeDocumento',
     start: 4,
     end: 17,
-    mandatory: true,
   }, {
     name: 'filler',
     start: 18,
