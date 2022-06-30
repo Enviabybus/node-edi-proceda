@@ -1,5 +1,4 @@
 import { EdiSchema } from '../../..';
-import cabecalhoDeDocumentoSchema from './310-cabecalho-de-documento.schema';
 
 export const cabecalhoDeIntercambioSchema: EdiSchema = {
   name: 'cabecalhoDeIntercambio',

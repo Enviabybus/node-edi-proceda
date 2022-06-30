@@ -1,16 +1,6 @@
-# OSX
-.DS_Store
-
-# IDE
-.idea
-.vscode
-
-# npm
-node_modules
+/lib
+.arcconfig
+.eslintrc.js
+.gitignore
+tsconfig.json
 yarn.lock
-package-lock.json
-
-# dev
-src
-.eslintrc.json
-.tsconfig.json
