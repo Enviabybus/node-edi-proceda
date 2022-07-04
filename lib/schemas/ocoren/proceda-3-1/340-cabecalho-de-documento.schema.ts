@@ -5,6 +5,7 @@ export const cabecalhoDeDocumentoSchema: EdiSchema = {
   name: 'cabecalhoDeDocumento',
   identifier: '340',
   mandatory: true,
+  multiple: true,
   params: [{
     name: 'identificadorDeRegistro',
     start: 1,

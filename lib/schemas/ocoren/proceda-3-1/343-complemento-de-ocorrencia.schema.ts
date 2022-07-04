@@ -5,6 +5,7 @@ export const complementoDeOcorrencia: EdiSchema = {
   name: 'complementoDeOcorrencia',
   identifier: '343',
   mandatory: false,
+  multiple: true,
   params: [{
     name: 'identificadorDeRegistro',
     start: 1,

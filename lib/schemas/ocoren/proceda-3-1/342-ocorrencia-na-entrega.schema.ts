@@ -6,6 +6,7 @@ export const ocorrenciaNaEntrega: EdiSchema = {
   name: 'ocorrenciaNaEntrega',
   identifier: '342',
   mandatory: true,
+  multiple: true,
   params: [{
     name: 'identificadorDeRegistro',
     start: 1,
