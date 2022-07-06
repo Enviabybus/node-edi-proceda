@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../..';
+import { EdiSchema } from '../../../';
 import dadosDaTransportadora from './341-dados-da-transportadora.schema';
 import complementoDeOcorrencia from './343-complemento-de-ocorrencia.schema';
 
@@ -61,7 +61,7 @@ export const ocorrenciaNaEntrega: EdiSchema = {
     end: 120,
   }],
   complement: dadosDaTransportadora,
-  includes: [ complementoDeOcorrencia ],
+  includes: [complementoDeOcorrencia],
 };
 
 export enum CodigoDeObservacao {

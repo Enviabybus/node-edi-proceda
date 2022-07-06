@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../..';
+import { EdiSchema } from '../../../';
 import ocorrenciaNaEntrega from './342-ocorrencia-na-entrega.schema';
 
 export const complementoDeOcorrencia: EdiSchema = {

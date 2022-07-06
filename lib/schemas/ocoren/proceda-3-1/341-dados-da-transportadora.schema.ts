@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../..';
+import { EdiSchema } from '../../../';
 import cabecalhoDeDocumentoSchema from './340-cabecalho-de-documento.schema';
 import ocorrenciaNaEntrega from './342-ocorrencia-na-entrega.schema';
 
@@ -28,7 +28,7 @@ export const dadosDaTransportadora: EdiSchema = {
     end: 120,
   }],
   complement: cabecalhoDeDocumentoSchema,
-  includes: [ ocorrenciaNaEntrega ],
+  includes: [ocorrenciaNaEntrega],
 };
 
 export default dadosDaTransportadora;

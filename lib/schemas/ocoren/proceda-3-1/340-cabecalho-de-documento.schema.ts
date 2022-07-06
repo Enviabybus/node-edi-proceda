@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../..';
+import { EdiSchema } from '../../../';
 import dadosDaTransportadora from './341-dados-da-transportadora.schema';
 
 export const cabecalhoDeDocumentoSchema: EdiSchema = {
@@ -22,7 +22,7 @@ export const cabecalhoDeDocumentoSchema: EdiSchema = {
     start: 18,
     end: 120,
   }],
-  includes: [ dadosDaTransportadora ],
+  includes: [dadosDaTransportadora],
 };
 
 export default cabecalhoDeDocumentoSchema;

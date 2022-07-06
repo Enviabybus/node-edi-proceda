@@ -1,4 +1,4 @@
-import { EdiSchema } from '../../..';
+import { EdiSchema } from '../../../';
 import cabecalhoDeDocumentoSchema from './340-cabecalho-de-documento.schema';
 
 export const cabecalhoDeIntercambioSchema: EdiSchema = {
@@ -43,7 +43,7 @@ export const cabecalhoDeIntercambioSchema: EdiSchema = {
     start: 96,
     end: 120,
   }],
-  includes: [ cabecalhoDeDocumentoSchema ],
+  includes: [cabecalhoDeDocumentoSchema],
 };
 
 export default cabecalhoDeIntercambioSchema;
