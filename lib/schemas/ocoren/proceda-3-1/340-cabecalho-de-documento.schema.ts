@@ -11,7 +11,6 @@ export const cabecalhoDeDocumentoSchema: EdiSchema = {
     start: 1,
     end: 3,
     mandatory: true,
-    format: Number,
   }, {
     name: 'identificacaoDoDocumento',
     start: 4,

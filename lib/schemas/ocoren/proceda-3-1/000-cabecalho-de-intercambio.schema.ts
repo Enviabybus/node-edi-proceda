@@ -10,7 +10,6 @@ export const cabecalhoDeIntercambioSchema: EdiSchema = {
     start: 1,
     end: 3,
     mandatory: true,
-    format: Number,
   }, {
     name: 'identificacaoDoRemetente',
     start: 4,
@@ -26,13 +25,11 @@ export const cabecalhoDeIntercambioSchema: EdiSchema = {
     start: 74,
     end: 79,
     mandatory: true,
-    format: Number,
   }, {
     name: 'hora',
     start: 80,
     end: 83,
     mandatory: true,
-    format: Number,
   }, {
     name: 'identificacaoDoIntercambio',
     start: 84,

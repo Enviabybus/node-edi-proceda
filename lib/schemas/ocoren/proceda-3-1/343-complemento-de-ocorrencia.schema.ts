@@ -11,12 +11,10 @@ export const complementoDeOcorrencia: EdiSchema = {
     start: 1,
     end: 3,
     mandatory: true,
-    format: Number,
   }, {
     name: 'cnpjDaEmpresaContratanteDoFrete',
     start: 4,
     end: 17,
-    format: Number,
   }, {
     name: 'filialEmissoraDoConhecimento',
     start: 18,

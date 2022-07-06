@@ -11,13 +11,11 @@ export const dadosDaTransportadora: EdiSchema = {
     start: 1,
     end: 3,
     mandatory: true,
-    format: Number,
   }, {
     name: 'cnpj',
     start: 4,
     end: 17,
     mandatory: true,
-    format: Number,
   }, {
     name: 'razaoSocial',
     start: 18,
