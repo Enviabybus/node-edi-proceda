@@ -1,5 +1,4 @@
 import { EdiSchema } from '../../..';
-import cabecalhoDeIntercambioSchema from './000-cabecalho-de-intercambio.schema';
 import dadosDaTransportadora from './341-dados-da-transportadora.schema';
 
 export const cabecalhoDeDocumentoSchema: EdiSchema = {
@@ -23,7 +22,6 @@ export const cabecalhoDeDocumentoSchema: EdiSchema = {
     start: 18,
     end: 120,
   }],
-  complement: cabecalhoDeIntercambioSchema,
   includes: [ dadosDaTransportadora ],
 };
 

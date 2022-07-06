@@ -1,6 +1,6 @@
 {
   "name": "@enviabybus/edi-proceda",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Interpretador de arquivos de EDI Proceda",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
