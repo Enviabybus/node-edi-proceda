@@ -1,4 +1,3 @@
-import { EdiDecimal } from '../../../edi/formatters';
 import { EdiSchema } from '../../..';
 
 export const dadosComplementaresNfSchema: EdiSchema = {
@@ -8,13 +7,13 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'identificadorDeRegistro',
     start: 1,
     end: 3,
-    format: Number,
+    format: { type: 'number' },
     mandatory: true,
   }, {
     name: 'codigoDaOperacaoFiscal',
     start: 4,
     end: 7,
-    format: Number,
+    format: { type: 'number' },
     mandatory: true,
   }, {
     name: 'tipoPeriodoDeEntrega',
@@ -25,25 +24,25 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'dataInicialDeEntrega',
     start: 9,
     end: 16,
-    format: Number,
+    format: { type: 'number' },
     pattern: /^\d+$/,
   }, {
     name: 'horaInicialDeEntrega',
     start: 17,
     end: 20,
-    format: Number,
+    format: { type: 'number' },
     pattern: /^\d+$/,
   }, {
     name: 'dataFinalDeEntrega',
     start: 21,
     end: 28,
-    format: Number,
+    format: { type: 'number' },
     pattern: /^\d+$/,
   }, {
     name: 'horaFinalDeEntrega',
     start: 29,
     end: 32,
-    format: Number,
+    format: { type: 'number' },
     pattern: /^\d+$/,
   }, {
     name: 'identificacaoLocalDeDesembarque',
@@ -53,7 +52,7 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'calculoDeFreteDiferenciado',
     start: 48,
     end: 48,
-    format: (v): boolean => /S/i.test(v),
+    format: { type: 'boolean', true: 'S', false: 'N' },
     mandatory: true,
   }, {
     name: 'identificacaoTabelaDePrecoDeFrete',
@@ -63,7 +62,7 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'cnpjDoEmissorDaNotaFiscal',
     start: 59,
     end: 73,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'serieDaNotaFiscal',
     start: 74,
@@ -72,12 +71,12 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'numeroDaNotaFiscal',
     start: 77,
     end: 84,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'cnpjDoEmissorDaNotaFiscal2',
     start: 85,
     end: 99,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'serieDaNotaFiscal2',
     start: 100,
@@ -86,12 +85,12 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'numeroDaNotaFiscal2',
     start: 103,
     end: 110,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'cnpjDoEmissorDaNotaFiscal3',
     start: 111,
     end: 125,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'serieDaNotaFiscal3',
     start: 126,
@@ -100,12 +99,12 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'numeroDaNotaFiscal3',
     start: 129,
     end: 136,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'cnpjDoEmissorDaNotaFiscal4',
     start: 137,
     end: 151,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'serieDaNotaFiscal4',
     start: 152,
@@ -114,12 +113,12 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'numeroDaNotaFiscal4',
     start: 155,
     end: 162,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'cnpjDoEmissorDaNotaFiscal5',
     start: 163,
     end: 177,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'serieDaNotaFiscal5',
     start: 178,
@@ -128,12 +127,12 @@ export const dadosComplementaresNfSchema: EdiSchema = {
     name: 'numeroDaNotaFiscal5',
     start: 181,
     end: 188,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'valorDeDespesasAdicionais',
     start: 189,
     end: 203,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }, {
     name: 'tipoDeVeiculo',
     start: 204,

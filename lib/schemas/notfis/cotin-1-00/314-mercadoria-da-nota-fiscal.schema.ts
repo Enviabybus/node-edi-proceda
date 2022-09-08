@@ -1,9 +1,8 @@
-import { EdiDecimal } from '../../../edi/formatters';
 import { EdiSchema } from '../../../';
 
 export const mercadoriaDaNotaFiscal: EdiSchema = {
   name: 'mercadoriaDaNotaFiscal',
-  identifier: '313',
+  identifier: '314',
   params: [{
     name: 'identificadorDeRegistro',
     start: 1,
@@ -14,7 +13,7 @@ export const mercadoriaDaNotaFiscal: EdiSchema = {
     start: 4,
     end: 10,
     mandatory: true,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }, {
     name: 'especieDeAcondicionamento',
     start: 11,
@@ -29,7 +28,7 @@ export const mercadoriaDaNotaFiscal: EdiSchema = {
     name: 'quantidadeDeVolumes2',
     start: 56,
     end: 62,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }, {
     name: 'especieDeAcondicionamento2',
     start: 63,
@@ -42,7 +41,7 @@ export const mercadoriaDaNotaFiscal: EdiSchema = {
     name: 'quantidadeDeVolumes3',
     start: 108,
     end: 114,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }, {
     name: 'especieDeAcondicionamento3',
     start: 115,
@@ -55,7 +54,7 @@ export const mercadoriaDaNotaFiscal: EdiSchema = {
     name: 'quantidadeDeVolumes4',
     start: 160,
     end: 166,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }, {
     name: 'especieDeAcondicionamento4',
     start: 167,

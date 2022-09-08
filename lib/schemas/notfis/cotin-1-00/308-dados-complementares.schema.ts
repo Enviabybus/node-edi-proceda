@@ -24,7 +24,7 @@ export const dadosComplementaresSchema: EdiSchema = {
     name: 'contribuinte',
     start: 100,
     end: 100,
-    format: (v: string): boolean => /^S$/i.test(v),
+    format: { type: 'boolean', true: 'S', false: 'N' },
   }, {
     name: 'pais',
     start: 101,

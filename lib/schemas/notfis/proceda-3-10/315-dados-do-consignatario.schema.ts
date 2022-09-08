@@ -8,7 +8,7 @@ export const dadosDoConsignatarioSchema: EdiSchema = {
     name: 'identificadorDeRegistro',
     start: 1,
     end: 3,
-    format: Number,
+    format: { type: 'number' },
     mandatory: true,
   }, {
     name: 'razaoSocial',
@@ -19,7 +19,7 @@ export const dadosDoConsignatarioSchema: EdiSchema = {
     name: 'cnpj',
     start: 44,
     end: 57,
-    format: Number,
+    format: { type: 'number' },
     mandatory: true,
   }, {
     name: 'inscricaoEstadual',

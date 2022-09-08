@@ -1,4 +1,3 @@
-import { EdiDecimal } from '../../../edi/formatters';
 import { EdiSchema } from '../../../';
 
 export const dadosParaRedespacho: EdiSchema = {
@@ -74,7 +73,7 @@ export const dadosParaRedespacho: EdiSchema = {
     name: 'valorDocumentoAnterior',
     start: 298,
     end: 307,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }],
 };
 

@@ -1,4 +1,3 @@
-import { EdiDecimal } from '../../../edi/formatters';
 import { EdiSchema } from '../../../';
 
 export const dadosComplementaresNf: EdiSchema = {
@@ -43,7 +42,7 @@ export const dadosComplementaresNf: EdiSchema = {
     name: 'tipoDeEntrega',
     start: 30,
     end: 33,
-    format: Number,
+    format: { type: 'number' },
     seq: 7,
   }, {
     name: 'TipoDeCarga',
@@ -70,19 +69,19 @@ export const dadosComplementaresNf: EdiSchema = {
     start: 129,
     end: 132,
     seq: 10,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }, {
     name: 'baseCalculoIcms',
     start: 133,
     end: 147,
     seq: 11,
-    format: EdiDecimal(2),
+    format: { type: 'number', precision: 2 },
   }, {
     name: 'cfopDaNf',
     start: 148,
     end: 152,
     seq: 12,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'referenciaDeEntrega',
     start: 152,

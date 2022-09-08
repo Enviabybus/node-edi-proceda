@@ -13,7 +13,7 @@ export const dadosDaEmbarcadoraSchema: EdiSchema = {
     name: 'identificadorDeRegistro',
     start: 1,
     end: 3,
-    format: Number,
+    format: { type: 'number' },
     mandatory: true,
   }, {
     name: 'cnpj',

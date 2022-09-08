@@ -14,7 +14,7 @@ export const mercadoriaDaNotaFiscalSchema: EdiSchema = {
     start: 4,
     end: 10,
     mandatory: true,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'especieDeAcondicionamento',
     start: 11,
@@ -29,7 +29,7 @@ export const mercadoriaDaNotaFiscalSchema: EdiSchema = {
     name: 'quantidadeDeVolumes2',
     start: 56,
     end: 62,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'especieDeAcondicionamento2',
     start: 63,
@@ -42,7 +42,7 @@ export const mercadoriaDaNotaFiscalSchema: EdiSchema = {
     name: 'quantidadeDeVolumes3',
     start: 108,
     end: 114,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'especieDeAcondicionamento3',
     start: 115,
@@ -55,7 +55,7 @@ export const mercadoriaDaNotaFiscalSchema: EdiSchema = {
     name: 'quantidadeDeVolumes4',
     start: 160,
     end: 166,
-    format: Number,
+    format: { type: 'number' },
   }, {
     name: 'especieDeAcondicionamento4',
     start: 167,

@@ -1,11 +1,10 @@
-
 import { JSONSchema4Object } from 'json-schema';
 
 import {
   EdiParserMandatoryFieldError,
   EdiParserMandatoryValueError,
   EdiParserPatternError,
-} from './edi/errors';
+} from './errors/edi-parser.error';
 
 // #region typings
 export interface EdiSchema {
@@ -18,6 +17,10 @@ export interface EdiSchema {
   includes?: EdiSchema[];
 }
 
+type booleanTypeFormat = { type: 'boolean', true: string, false: string };
+type numberTypeFormat = { type: 'number', precision?: number };
+type stringTypeFormat = { type: 'string' };
+
 export interface EdiParamSchema {
   seq?: number,
   name: string;
@@ -25,17 +28,13 @@ export interface EdiParamSchema {
   end: number;
   mandatory?: boolean;
   pattern?: RegExp;
-  format?: (v: string) => string | number | boolean;
+  format?: stringTypeFormat | numberTypeFormat | booleanTypeFormat,
 }
 // #endregion typings
 
 const EDI = {
   parse: (schemas: EdiSchema[], fileContent: string, validate = true): JSONSchema4Object => {
     return parseFile(schemas, fileContent, validate);
-  },
-
-  notfis: {
-
   },
 };
 
@@ -106,9 +105,20 @@ function parseParams(
       throw new EdiParserPatternError(lineNumber, reg, seq, name, start, end);
     }
 
-    obj[name] = value && schema.format ? schema.format(value) : value;
+    obj[name] = value && schema.format ? formatParam(value, schema.format) : value;
     return obj;
   }, {} as JSONSchema4Object);
+}
+
+function formatParam(value: string, format: stringTypeFormat
+  | numberTypeFormat
+  | booleanTypeFormat
+): string | number | boolean {
+  switch (format.type) {
+    case 'boolean' : return format.true === value;
+    case 'number' : return Number(value) / 10 ** (format.precision || 0);
+    default : return value;
+  }
 }
 
 export default EDI;
