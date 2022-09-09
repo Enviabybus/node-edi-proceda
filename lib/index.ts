@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { JSONSchema4Object } from 'json-schema';
+import Lodash from 'lodash';
 
+import { EdiBuildMandatoryFieldError } from './errors/edi-build.error';
 import {
   EdiParserMandatoryFieldError,
   EdiParserMandatoryValueError,
@@ -36,7 +39,42 @@ const EDI = {
   parse: (schemas: EdiSchema[], fileContent: string, validate = true): JSONSchema4Object => {
     return parseFile(schemas, fileContent, validate);
   },
+  build: (schemas: EdiSchema[], jsonContent: JSONSchema4Object, validate = true): string => {
+    return buildFile(schemas, jsonContent, validate);
+  },
 };
+
+function buildFile(schemas: EdiSchema[], data: JSONSchema4Object, validate = true): string {
+  const schemaContent: string[] = [];
+
+  schemas.forEach(schema => {
+    const object = data[schema.name];
+    let complement = '';
+    let includes = '';
+
+    const objects = Lodash((schema.multiple ? object : [object]) as JSONSchema4Object[]).compact().value();
+
+    objects.forEach(object => {
+      const line = schema.params.reduce((content, param) => {
+        const value = (object[param.name] || '') as any;
+
+        if (validate && param.mandatory && object[param.name] == null) {
+          throw new EdiBuildMandatoryFieldError(param.name);
+        }
+
+        return content.concat(formatBuildParam(value, param));
+      }, '');
+
+      if (schema.includes) { includes = buildFile(schema.includes, object, validate); }
+
+      if (schema.complement) { complement = buildFile([schema.complement], object, validate); }
+
+      return schemaContent.push(Lodash([line, complement, includes]).compact().value().join('\n'));
+    });
+  });
+
+  return schemaContent.join('\n');
+}
 
 function parseFile(schemas: EdiSchema[], Edi: string, validate: boolean, startLineNumber = 1): JSONSchema4Object {
   const lines = Edi.split('\n').map(l => l.trim());
@@ -48,8 +86,8 @@ function parseFile(schemas: EdiSchema[], Edi: string, validate: boolean, startLi
       if (!line.startsWith(schema.identifier)) { return; }
 
       const lineNumber = index + startLineNumber;
-      let complement: JSONSchema4Object = {};
-      let includes: JSONSchema4Object = {};
+      let complement = {};
+      let includes = {};
 
       if (schema.complement) {
         complement = parseFile([schema.complement], lines.slice(0, 1).join('\n'), validate, lineNumber + 1);
@@ -105,12 +143,12 @@ function parseParams(
       throw new EdiParserPatternError(lineNumber, reg, seq, name, start, end);
     }
 
-    obj[name] = value && schema.format ? formatParam(value, schema.format) : value;
+    obj[name] = value && schema.format ? formatParseParam(value, schema.format) : value;
     return obj;
   }, {} as JSONSchema4Object);
 }
 
-function formatParam(value: string, format: stringTypeFormat
+function formatParseParam(value: string, format: stringTypeFormat
   | numberTypeFormat
   | booleanTypeFormat
 ): string | number | boolean {
@@ -118,6 +156,18 @@ function formatParam(value: string, format: stringTypeFormat
     case 'boolean' : return format.true === value;
     case 'number' : return Number(value) / 10 ** (format.precision || 0);
     default : return value;
+  }
+}
+
+function formatBuildParam(value: string | number | boolean, { format, end, start }: EdiParamSchema): string {
+  switch (format?.type) {
+    case 'boolean' :
+      return value ? format.true : format.false;
+    case 'number' :
+      value = format ? Number(value).toFixed(format.precision).replace('.', '') : value.toString();
+      return value.padStart(end - start + 1, '0');
+    default :
+      return value.toString().padEnd(end - start + 1, ' ');
   }
 }
 
