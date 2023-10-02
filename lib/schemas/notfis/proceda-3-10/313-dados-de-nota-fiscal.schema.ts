@@ -48,17 +48,17 @@ export const dadosDeNotaFiscalSchema: EdiSchema = {
   }, {
     name: 'numero',
     start: 33,
-    end: 40,
+    end: 41,
     mandatory: true,
     format: { type: 'number' },
   }, {
     name: 'dataDeEmissao',
-    start: 41,
-    end: 48,
+    start: 42,
+    end: 49,
     mandatory: true,
   }, {
     name: 'naturezaDaMercadoria',
-    start: 49,
+    start: 50,
     end: 63,
     mandatory: true,
   }, {
