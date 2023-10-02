@@ -14,7 +14,7 @@ Tendo um Schema de EDI Proceda já definido:
 
 ```js
 const EDI = require('@enviabybus/edi-proceda').default;
-const NotfisCotin = require('@enviabybus/schemas/notfis/cotin-1-00').default;
+const NotfisCotin = require('@enviabybus/edi-proceda/dist/schemas/notfis/cotin-1-00').default;
 
 const notfis = fs.readFileSync('./algum-arquivo-notfis.txt').toString();
 EDI.parse(NotfisCotin, notfis);
