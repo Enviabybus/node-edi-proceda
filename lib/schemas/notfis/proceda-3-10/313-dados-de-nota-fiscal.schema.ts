@@ -160,8 +160,8 @@ export const dadosDeNotaFiscalSchema: EdiSchema = {
     format: { type: 'boolean', true: 'S', false: 'N' },
   }, {
     name: 'chaveCte',
-    start: 239,
-    end: 240,
+    start: 242,
+    end: 286,
   }],
   complement: dadosDoDestinatarioSchema,
   includes: [dadosComplementaresNfSchema],
