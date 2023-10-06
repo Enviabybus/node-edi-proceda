@@ -1,6 +1,7 @@
 import { EdiSchema } from '../../..';
+import dadosComplementaresNfSchema307 from './307-dados-complementares-nf.schema';
 import dadosDoDestinatarioSchema from './312-dados-do-destinatario.schema';
-import dadosComplementaresNfSchema from './333-dados-complementares-nf.schema';
+import dadosComplementaresNfSchema333 from './333-dados-complementares-nf.schema';
 
 export const dadosDeNotaFiscalSchema: EdiSchema = {
   name: 'dadosDeNotaFiscal',
@@ -168,7 +169,10 @@ export const dadosDeNotaFiscalSchema: EdiSchema = {
     end: 286,
  }],
   complement: dadosDoDestinatarioSchema,
-  includes: [dadosComplementaresNfSchema],
+  includes: [
+    dadosComplementaresNfSchema307,
+    dadosComplementaresNfSchema333
+  ],
 };
 
 export enum MeioDeTransporte {
