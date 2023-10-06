@@ -164,10 +164,10 @@ export const dadosDeNotaFiscalSchema: EdiSchema = {
       start: 239,
       end: 240,
   }, {
-    name: 'chaveNfe',
-    start: 242,
-    end: 286,
- }],
+      name: 'chaveNfe',
+      start: 242,
+      end: 286,
+  }],
   complement: dadosDoDestinatarioSchema,
   includes: [
     dadosComplementaresNfSchema307,
