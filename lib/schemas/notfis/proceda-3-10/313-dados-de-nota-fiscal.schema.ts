@@ -76,7 +76,7 @@ export const dadosDeNotaFiscalSchema: EdiSchema = {
   }, {
       name: 'valorTotalDaNota',
       start: 86,
-      end: 100,
+      end: 101,
       mandatory: true,
       format: { type: 'number', precision: 2 },
   }, {
