@@ -160,14 +160,16 @@ function formatParseParam(value: string, format: stringTypeFormat
 }
 
 function formatBuildParam(value: string | number | boolean, { format, end, start }: EdiParamSchema): string {
+  const paramSize = end - start + 1;
+
   switch (format?.type) {
     case 'boolean' :
       return value ? format.true : format.false;
     case 'number' :
       value = format ? Number(value).toFixed(format.precision).replace('.', '') : value.toString();
-      return value.padStart(end - start + 1, '0');
+      return value.padStart(paramSize, '0').substring(0, paramSize);
     default :
-      return value.toString().padEnd(end - start + 1, ' ');
+      return value.toString().padEnd(paramSize, ' ').substring(0, paramSize);
   }
 }
 
